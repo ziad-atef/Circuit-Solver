@@ -6,46 +6,75 @@ NetList Format
 -----------------------
 
 W  value                                                                                     //The entered angular frequency
+
 R<num> node1 node2 resistance
+  
 C<num> node1 node2 capacitance
+  
 L<num> node1 node2 Inductance
+  
 V<num> node1 node2 value phase                                           // value refers to the magnitude  
+  
 I<num> node1 node2 value phase                                            // value refers to the magnitude
+  
 F<num> node1 node2 ElemID DependencyFactor                    //ElemID is the ID of the element where the cuurent passing through it is the same current the cccs depends on 
+  
 H<num> node1 node2 ElemID DependencyFactor                    //ElemID is the ID of the element where the cuurent passing through it is the same current the cccs depends on 
+  
 G<num> node1 node2 Dnode1 Dnode2 DependencyFactor   //Dnode1 and Dnode2 are the nodes where the controlled voltage is across    
+  
 E<num> node1 node2 Dnode1 Dnode2 DependencyFactor    //Dnode1 and Dnode2 are the nodes where the controlled voltage is across
+
 
 
 Elements ID
 ------------------
 
 R is the ID for Resistor
+
 C is the ID for Capacitor
+
 L is the ID for Inductor
+
 I is the ID for InDependent cs
+
 V is the ID for InDependent vs
+
 F is the ID for cccs
+
 H is the ID for ccvs
+
 G is the ID for vccs
+
 E is the ID for vcvs
 
 -In any current source: the node at the arrow's tail is ('node1') in the netlist, and the node at the arrow's head is ('node2')  (i.e. a positive current flows into node1 and out of node2.)
+
 -In any Voltage source: ('node1') is the positive node to be written in the netlist and ('node2') is the negative one
+
 -But for the ccvs ('H') : ('node1') is the negative node to be written in the netlist and ('node2') is the positive one
 
 
 -If you have in your circuit more than one current controlled source that depends on the same current, you shall write at the end of these sources 'repeated' except for the first one
 
 i.e 
+
 W 5
+
 R1 3 0 1000
+
 V1 3 1 5 0
+
 C1 1 0 0.015
+
 F1 2 1 R1 35
+
 R2 2 4 5000
+
 H1 2 5 R1 5 repeated
+
 R3 5 4 2500
+
 L1 4 0 0.01
 
 Example circuits
