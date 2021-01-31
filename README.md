@@ -177,3 +177,5 @@ F1 4 0 R1 0.5
 
 
 (Note that: C1 is written from '2' to '0' as the 'i0' supposed to flow and R1 is written from '1' to '2' as the 'i0' supposed to flow )
+
+![Ciruits](https://drive.google.com/file/d/12YDxFeGEhlkn1nbO70dnekSW4Jip3LtU/view?usp=sharing)
